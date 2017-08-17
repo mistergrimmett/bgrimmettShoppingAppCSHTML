@@ -1,0 +1,19 @@
+﻿@model IEnumerable<bgrimmettShoppingAppCSHTML.Models.CodeFirst.Item>
+
+<!--Beginning of second row-->
+<div class="container" id="images">
+    <div style="margin-left:280px;">
+        <div class="row" style="padding-top:40px;">
+                
+            @foreach (var item in Model)
+            { 
+                <div class="col-md-3">
+                    <img src="@item.MediaURL" class="img-responsive" />
+                    <p style="padding-top:25px">@item.Name</p>
+                    <p>$@item.Price</p>
+                    <button class="w3-button w3-ripple w3-black">Buy</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

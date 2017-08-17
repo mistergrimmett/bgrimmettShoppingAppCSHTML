@@ -1,0 +1,18 @@
+﻿@model IEnumerable<bgrimmettShoppingAppCSHTML.Models.CodeFirst.Item>
+
+<div class="row" style="padding-top:40px;">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <a href="@Url.Action("Details", "Items", new { id = item.Id })"><img src="@item.MediaURL" class="img-responsive" /></a>
+            <p style="padding-top:25px">@item.Name</p>
+            <p>$@item.Price</p>
+            <button class="btn btn-danger">Buy</button>
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <span>|</span>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,123 @@
+﻿/*#myMainImage {
+    position: relative;
+    width: 100%;
+}
+
+#myMainHead {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 20px;
+    font-size: 50px;
+    color: white;
+}
+
+#myMainButton {
+    position: absolute;
+    top: 190px;
+    left: 20px;
+    background-color: black;
+    color: white;
+    border-style: none;
+    padding: 12px 30px;
+}*/
+
+/*#myContactContainer {
+    
+}*/
+
+/*Home Page*/
+
+.home {
+    
+    text-align:center;
+}
+
+.home h1 {
+color:red;
+    font-weight:bold;
+    font-size:32px;
+    font-family:Dubai;
+}
+
+.bkg {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.sp {
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+    .sp h {
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+.fp {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    background-color: black;
+    color: white;
+    text-align:center;
+}
+
+    .fp a {
+        text-decoration: none;
+        color:white;
+    }
+
+    .fp a:hover {
+        color:red;
+    }
+
+.as a {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+    .as a:hover {
+        color: red;
+        text-decoration: none;
+    }
+
+.as h {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.na {
+    position: absolute;
+    width: 100%;
+    top: 450px;
+    left: 50px;
+    font-size: 50px;
+    color: white;
+}
+
+.sb {
+    position: absolute;
+    top: 590px;
+    left: 50px;
+    background-color: white;
+    color: black;
+    border-style: none;
+    padding: 12px 30px;
+    font-weight: bold;
+}
+
+.smi a {
+    color: red;
+}
+
+.store i {
+    color: red;
+}
+
+.store h {
+    font-weight: bold;
+    font-size: 24px;
+}
