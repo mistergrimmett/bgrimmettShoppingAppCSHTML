@@ -8,12 +8,13 @@ using System.Web;
 using System.Web.Mvc;
 using bgrimmettShoppingAppCSHTML.Models;
 using bgrimmettShoppingAppCSHTML.Models.CodeFirst;
+using Microsoft.AspNet.Identity;
 
 namespace bgrimmettShoppingAppCSHTML.Controllers
 {
-    public class OrderItemsController : Controller
+    public class OrderItemsController : Universal
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+
 
         // GET: OrderItems
         public ActionResult Index()
@@ -50,18 +51,27 @@ namespace bgrimmettShoppingAppCSHTML.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,OrderId,ItemId,Quantity,UnitPrice")] OrderItem orderItem)
+        public ActionResult Create(int? id)
         {
             if (ModelState.IsValid)
             {
-                db.OrderItems.Add(orderItem);
+                OrderItem orderitem = new OrderItem();
+                var user = db.Users.Find(User.Identity.GetUserId());
+                var cartitem = db.CartItems.Find(User.Identity.GetUserId());
+                orderitem.Quantity = 1;
+                orderitem.ItemId = id.Value;
+                db.OrderItems.Add(orderitem);
+                db.CartItems.Remove(cartitem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ItemId = new SelectList(db.Items, "Id", "Name", orderItem.ItemId);
-            ViewBag.OrderId = new SelectList(db.Orders, "Id", "Address", orderItem.OrderId);
-            return View(orderItem);
+            //ViewBag.ItemId = new SelectList(db.Items, "Id", "Name", orderItem.ItemId);
+            //ViewBag.OrderId = new SelectList(db.Orders, "Id", "Address", orderItem.OrderId);
+
+
+
+            return View();
         }
 
         // GET: OrderItems/Edit/5

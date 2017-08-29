@@ -1,0 +1,471 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ecommerce App</title>
+    <meta charset="utf-8" />
+    <link href="~/Assets/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Assets/CSS/myCSS.css" rel="stylesheet" />
+    <script src="~/Assets/js/myJS.js"></script>
+    <link href="~/Assets/Content/font-awesome.css" rel="stylesheet" />
+</head>
+<body style="background-color:white;">
+
+    <!--Models. Model objects are the parts of the application that implement the logic for the application's data domain-->
+    <!--Views. Views are the components that display the application's user interface (UI). -->
+    <!--Controllers. Controllers are the components that handle user interaction, work with the model, and ultimately select a view to render that displays UI.-->
+    <!--user sends the request to the controller, controller demands data from the model, model sends data back to the controller, controller sends data to the view, and the view sends the data back to the user-->
+    <!--Modal for Subscription-->
+
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <p style="font-weight:bold; text-align:center;">NEWSLETTER</p>
+                        <p style="text-align:center;">Join our mailing list to receive updates on new arrivals and special offers.</p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control" type="email" placeholder="Enter your email" />
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div id="newModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <p style="font-weight:bold; text-align:center;">THANK YOU FOR SUBMITTING YOUR QUESTIONS</p>
+                        <p style="text-align:center;">We appreciate your time and interest in our product.</p>
+                        <p style="text-align:center;">Someone will e-mail you a wacky, yet refined and accurate response shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!--End of modal-->
+    <!--Beginning Of Navigation-->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="nb">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Precious Time</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Series
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Items")">CFW Series</a></li>
+                            <li><a href="@Url.Action("Index", "Items")">CFAW Series</a></li>
+                        </ul>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Collection
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">2017</a></li>
+                            <li><a href="#">2016</a></li>
+                            <li><a href="#">2015</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Accessories
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Straps</a></li>
+                            <li><a href="#">Parts</a></li>
+                            <li><a href="#">Tools</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="search">
+                            @using (Html.BeginForm("SearchResults", "Items", FormMethod.Post))
+                            {
+
+                                <input type="text" class="form-control input-sm" maxlength="64" name="searchitem" id="searchitem" placeholder="Search" />
+                                <button type="submit" class="btn btn-danger btn-sm">Search</button>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="chk">
+                    @Html.Partial("_LoginPartial")
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li><a href="@Url.Action("Index", "CartItems")"><span class="glyphicon glyphicon-shopping-cart"></span>@ViewBag.CartItems.Count</a></li>
+                    }
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!--End of Navigation-->
+    <!--Image Section-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="~/Assets/Images/3.jpg" class="img-responsive" />
+                <h class="na">New Arrivals<br /> Collection 2017</h>
+            </div>
+        </div>
+
+        <div class="container" id="images">
+            @*<div>
+            *@
+            @RenderBody()
+            @*
+                </div>*@
+        </div>
+    </div>
+
+    <!--End Of Image Section-->
+
+    <div class="container" id="myContactContainer">
+        <!--<div class="row">
+            <div class="col-md-12">
+                <div class="mySubscribeCustom">
+                    <h1>Subscribe</h1>
+                    <p1>To get special offers and <span style="color:tomato">VIP</span> treatment:</p1>
+                    <div class="form-group bkg">
+                        <form>
+                            <input class="form-control bkg" placeholder="Enter e-mail" />
+                            <button class="btn btn-danger">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!--Contact, About and Store beginning-->
+        <div class="sp">
+            <div class="row">
+                <div class="col-md-5">
+                    <div>
+                        <h>Contact</h>
+                        <p>Questions? Ask &darr;</p>
+                        <div class="form-group bkg">
+                            <form>
+                                <input class="form-control bkg" type="text" placeholder="Name" />
+                                <input class="form-control bkg" type="text" placeholder="Email" />
+                                <input class="form-control bkg" type="text" placeholder="Subject" />
+                                <input class="form-control bkg" type="text" placeholder="Message" />
+                                <a href="@Url.Action("Contact", "Home")"><span class="glyphicon glyphicon-arrow-right arwBTN"></span></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="as">
+                    <div class="text-center">
+                        <div class="col-md-4">
+                            <h>About</h>
+                            <p><a href="@Url.Action("About", "Home")">About us</a></p>
+                            <p><a href="#">We're Hiring</a></p>
+                            <p><a href="#" data-toggle="modal" data-target="#myModal">Contact</a></p>
+                            <p><a href="#">Support</a></p>
+                            <p><a href="#">Find Store</a></p>
+                            <p><a href="#">Shipment</a></p>
+                            <p><a href="#">Payment</a></p>
+                            <p><a href="#">Gift Card</a></p>
+                            <p><a href="#">Return</a></p>
+                            <p><a href="#">Help</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store">
+                    <div class="text-center">
+                        <div class="col-md-3">
+                            <h>Store</h>
+                            <p><i class="fa fa-map-marker"></i> Precious Time</p>
+                            <p><i class="fa fa-phone"></i> 867-5309</p>
+                            <p><i class="fa fa-envelope"></i> watch.doctor@precioustime.com</p>
+                            <h>We Accept</h>
+                            <p><i class="fa fa-cc-amex"></i> Amex</p>
+                            <p><i class="fa fa-credit-card"></i> Credit Card</p>
+                            <br>
+                            <div class="smi">
+                                <a href="https://www.facebook.com/mistergrimmett"><i class="fa fa-facebook-square"></i></a>
+                                <a href="https://www.instagram.com/mistergrimmett/"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-snapchat-ghost"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-square"></i></a>
+                                <a href="#"><i class="fa fa-twitter-square"></i></a>
+                                <a href="https://www.linkedin.com/in/brandon-grimmett/"><i class="fa fa-linkedin-square"></i></a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Contact, About and Store end-->
+        <!--footer starts-->
+        <footer>
+            <center>
+                <div class="fp">
+                    Powered By <a href="#">Brandon Grimmett &copy; 2017</a>
+                </div>
+
+            </center>
+        </footer>
+    </div>
+
+
+
+
+
+    <!--footer ends-->
+
+
+    <script src="~/Assets/scripts/jquery-1.9.1.js"></script>
+    <script src="~/Assets/scripts/bootstrap.js"></script>
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+
+
+
+@*
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="~/Assets/css/myCustomStyle.css" rel="stylesheet" />
+
+    </head>
+    <body style="margin-right:75px; max-width:1200px;">
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            <p style="font-weight:bold; text-align:center;">NEWSLETTER</p>
+                            <p style="text-align:center;">Join our mailing list to receive updates on new arrivals and special offers.</p>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <input type="email" placeholder="Enter your email" />
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Beginning of Navigation-->
+        <nav>
+            <div id="myCartIcon" style="margin-left:1145px; position:absolute; padding-top:30px;">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div id="mySearchIcon" style="margin-left:1175px; position:absolute; padding-top:30px;">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left" style="display:none" id="mySidebar">
+                <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">&times;</button>
+                <div class="headingformenu"
+                     style="font-weight:bold;
+                         text-align:center;
+                         padding-bottom:90px;
+                         font-size:28px;
+                         font-family:'Century Gothic';">LOGO</div>
+                <div class="myCustomNavItem">
+                    <div class="myCustomNavItem">
+
+                        <a href="#">CFW Series</a>
+                        <a href="#">CFAW Series</a>
+                        <a href="#collapse" class="myCustomNavItem" data-toggle="collapse" aria-expanded="true">Collection &#9660;</a>
+                        <div id="collapse" class="panel-collapse collapse" aria-expanded="false">
+
+
+                            <a>2017</a>
+                            <a>2016</a>
+                            <a>2015</a>
+                            <a>2014</a>
+
+
+
+                        </div>
+
+                        <a href="#">Straps</a>
+                        <a href="#">Parts</a>
+                        <a href="#">Tools</a>
+                        <a href="#">Accessories</a>
+
+
+                    </div>
+
+
+
+                    <div class="myCustomNavItem">
+                        <a href="#">Contact</a>
+                        <a href="#" data-toggle="modal" data-target="#myModal">Newsletter</a>
+                        <a href="#">Subscribe</a>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="w3-main" id="main" style="margin-left:340px">
+                <div class="w3-white">
+                    <button class="w3-button w3-white w3-xlarge" onclick="w3_open()">&#9776;</button>
+                </div>
+
+                <!--Text for main header image is absolute, image position is relative-->
+                <!--MAIN IMAGE-->
+                <div class="mainImage" style="padding-top:40px;">
+                    <img src="~/Assets/Images/3.jpg" alt="watch" style="width:100%; max-width:1000px;" class="img-responsive" />
+                    <h4 id="mainHead">New Arrivals<br /> Collection 2017</h4>
+                    <button id="mainButton">SHOP NOW</button>
+                </div>
+                <!--END OF MAIN IMAGE-->
+            </div>
+            <script>
+                    function w3_open() {
+                        document.getElementById("main").style.marginLeft = "none";
+                        document.getElementById("mySidebar").style.width = "25%";
+                        document.getElementById("mySidebar").style.display = "block";
+                        document.getElementById("openNav").style.display = 'block';
+                    }
+                    function w3_close() {
+                        document.getElementById("main").style.marginLeft = "none";
+                        document.getElementById("mySidebar").style.display = "none";
+                        document.getElementById("openNav").style.display = "inline-block";
+                    }
+            </script>
+            <!--style.display resets an elements display property to the default by blanking out the inline "display: none",
+               causing the element to fall back on its display property as defined by the page's ranking CSS rules.-->
+        </nav>
+
+
+        @RenderBody()
+
+        <!--end of third row-->
+        <div class="container" id="contactContain">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mySubscribeCustom">
+                        <h1>Subscribe</h1>
+                        <p1>To get special offers and <span style="color:tomato">VIP</span> treatment:</p1>
+                        <input placeholder="Enter e-mail" class="myPlaceholderCustom" />
+                        <button class="SubButton">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Contact, About and Store beginning-->
+
+            <div class="row" style="background-color:beige; margin-left:0.3px; width:82%; padding-top:30px; padding-bottom:50px;">
+                <div class="col-md-5">
+                    <div class="myContactEdit">
+                        <h4>Contact</h4>
+                        <p4>Questions? Go ahead.</p4>
+                        <div class="form-group">
+                            <form>
+                                <input class="form-control" type="text" placeholder="Name" />
+                                <input class="form-control" type="text" placeholder="Email" />
+                                <input class="form-control" type="text" placeholder="Subject" />
+                                <input class="form-control" type="text" placeholder="Message" />
+                                <button class="btn btn-danger">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <h4>About</h4>
+                    <a href="#">About us</a>
+                    <a href="#">We're Hiring</a>
+                    <a href="#">Support</a>
+                    <a href="#" class="findStore">Find Store</a>
+                    <a href="#">Shipment</a>
+                    <a href="#">Payment</a>
+                    <a href="#">Gift Card</a>
+                    <a href="#">Return</a>
+                    <a href="#">Help</a>
+                </div>
+
+                <div class="col-md-3">
+                    <h4>Store</h4>
+                    <p4><i class="fa fa-map-marker"></i> Company Name</p4>
+                    <p4><i class="fa fa-phone"></i> 867-5309</p4>
+                    <p4><i class="fa fa-envelope"></i> mjones@gmail.com</p4>
+                    <h4>We Accept</h4>
+                    <p4><i class="fa fa-cc-amex"></i> Amex</p4>
+                    <p4><i class="fa fa-credit-card"></i> Credit Card</p4>
+                    <br>
+                    <div class="socialMediaIcons">
+                        <i class="fa fa-facebook-square"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-snapchat-ghost"></i>
+                        <i class="fa fa-pinterest-square"></i>
+                        <i class="fa fa-twitter-square"></i>
+                        <i class="fa fa-linkedin-square"></i>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--Contact, About and Store end-->
+            <!--footer starts-->
+            <footer style="width:82%;">
+                <center>
+                    <div id="myFooter">
+                        <a>Brandon Grimmett &copy; 2017</a>
+                    </div>
+
+                </center>
+            </footer>
+        </div>
+
+
+        <!--footer ends-->
+
+
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/bootstrap.js"></script>
+
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>*@

@@ -14,6 +14,6 @@ namespace bgrimmettShoppingAppCSHTML.Models.CodeFirst
         public decimal UnitPrice { get; set; }
 
         public virtual Item Item { get; set; }
-        public virtual OrderEntryTable Order { get; set; }
+        public virtual Order Order { get; set; }
     }
 }

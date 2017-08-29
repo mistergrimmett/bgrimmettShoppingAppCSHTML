@@ -8,17 +8,20 @@ using System.Web;
 using System.Web.Mvc;
 using bgrimmettShoppingAppCSHTML.Models;
 using bgrimmettShoppingAppCSHTML.Models.CodeFirst;
+using Microsoft.AspNet.Identity;
 
 namespace bgrimmettShoppingAppCSHTML.Controllers
 {
-    public class CartItemsController : Controller
+    public class CartItemsController : Universal
     {
-        private ApplicationDbContext db = new ApplicationDbContext();   //Connecting to the application database
+
 
         // GET: CartItems
+        [Authorize]
         public ActionResult Index()
         {
-            return View(db.CartItems.ToList());
+            var user = db.Users.Find(User.Identity.GetUserId());
+            return View(user.CartItems.ToList());
         }
 
         // GET: CartItems/Details/5
@@ -45,19 +48,46 @@ namespace bgrimmettShoppingAppCSHTML.Controllers
         // POST: CartItems/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CustomerId,ItemId,Count,CreationDate")] CartItem cartItem)
+        public ActionResult Create(int? id)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                db.CartItems.Add(cartItem);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            return View(cartItem);
+            Item item = db.Items.Find(id);
+
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+
+            var user = db.Users.Find(User.Identity.GetUserId());
+            if (db.CartItems.Where(c => c.CustomerId == user.Id).Any(c => c.ItemId == id.Value))
+            {
+                var existingCartItem = db.CartItems.Where(c => c.CustomerId == user.Id).FirstOrDefault(c => c.ItemId == item.Id);
+                existingCartItem.Count += 1;
+                db.SaveChanges();
+            }
+            else
+            {
+                CartItem cartItem = new CartItem();
+
+                cartItem.Count = 1;
+                cartItem.ItemId = id.Value;
+                cartItem.CreationDate = System.DateTime.Now;
+                cartItem.CustomerId = user.Id;
+                db.CartItems.Add(cartItem);
+            }
+
+
+            db.SaveChanges();
+            return RedirectToAction("Index", "Items");
         }
+
 
         // GET: CartItems/Edit/5
         public ActionResult Edit(int? id)
@@ -126,3 +156,5 @@ namespace bgrimmettShoppingAppCSHTML.Controllers
         }
     }
 }
+
+

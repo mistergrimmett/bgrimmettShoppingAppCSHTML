@@ -16,12 +16,16 @@ namespace bgrimmettShoppingAppCSHTML.Models.CodeFirst
         public virtual Item Item { get; set; }
         public virtual ApplicationUser Customer { get; set; }
 
-        public decimal unitTotal
-        {
-            get
-            {
-                return Count * Item.Price;
-            }
-        }
+        //public decimal UnitTotal
+        //{
+        //    get
+        //    {
+        //        if(Item != null)
+        //        { 
+        //        return Count * Item.Price;
+        //        }
+        //        return 0;
+        //    }
+        //}
     }
 }

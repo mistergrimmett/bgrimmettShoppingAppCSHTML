@@ -1,0 +1,347 @@
+﻿/*#myMainImage {
+    position: relative;
+    width: 100%;
+}
+
+#myMainHead {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 20px;
+    font-size: 50px;
+    color: white;
+}
+
+#myMainButton {
+    position: absolute;
+    top: 190px;
+    left: 20px;
+    background-color: black;
+    color: white;
+    border-style: none;
+    padding: 12px 30px;
+}*/
+
+/*#myContactContainer {
+    
+}*/
+
+/*Home Page*/
+
+.nb {
+    background-color:black;
+    font-family:Dubai;
+    font-size:20px;
+}
+
+.home {
+    
+    text-align:center;
+    font-family:Dubai;
+    font-size:20px;
+    padding-top:90px;
+}
+
+.home p {
+    font-weight:bold;
+    font-size:20px;
+}
+
+.hImage {
+    padding-top:20px;
+}
+
+
+.home h1 {
+color:black;
+    font-weight:bold;
+    font-size:38px;
+    font-family:Dubai;
+}
+
+.bkg {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.sp {
+    margin-top:25px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    padding-left:40px;
+    background-color:black;
+    border-radius:10px;
+
+
+}
+
+    .sp h {
+        font-weight: bold;
+        font-size: 24px;
+        color:red;
+    }
+
+    .sp p{
+        color:white;
+    }
+
+.fp {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    background-color: white;
+    color: black;
+    text-align:center;
+}
+
+    .fp a {
+        text-decoration: none;
+        color:black;
+    }
+
+    .fp a:hover {
+        color:red;
+    }
+
+.as a {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+    .as a:hover {
+        color: red;
+        text-decoration: none;
+    }
+
+.as h {
+    font-weight: bold;
+    font-size: 24px;
+    color:red;
+}
+
+.na {
+    position: absolute;
+    width: 100%;
+    top: 450px;
+    left: 50px;
+    font-size: 70px;
+    color: white;
+    font-weight:bold;
+    font-family:Dubai;
+}
+
+.ab {
+    color:black;
+    font-weight:bold;
+    font-family:Dubai;
+
+}
+
+.smi a {
+    color: white;
+}
+
+.store i {
+    color:white;
+}
+
+.store i:hover {
+    color:grey;
+}
+
+.store h {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.uni {
+    padding-bottom:50px;
+    padding-top:30px;
+}
+
+.uni h2 {
+    font-weight:bold;
+    font-family:Dubai;
+}
+.uni th {
+    color:red;
+    font-family:Dubai;
+    font-size:18px;
+}
+
+.uni td {
+    font-weight:bold;
+    font-family:Dubai;
+    font-size:16px;
+}
+
+.idp {
+    padding-bottom:50px;
+    padding-top:30px;
+}
+
+.idp h2, h4 {
+    font-weight:bold;
+    font-family:Dubai;
+    color:black;
+}
+
+.idp img {
+    border-radius:4px;
+}
+
+.idp dt {
+    color:red;
+    font-weight:bold;
+    font-size:18px;
+    font-family:Dubai;
+}
+
+.idp dd {
+    font-weight:bold;
+    font-family:Dubai;
+    font-size:16px;
+}
+
+.itemDel {
+    padding-bottom:50px;
+    padding-top:30px;
+}
+
+.itemDel h3 {
+    font-weight:bold;
+    color:red;
+    font-family:Dubai;
+}
+
+.itemDel h2 {
+    font-weight:bold;
+    font-family:Dubai;
+}
+
+.itemDel dt {
+    font-weight:bold;
+    color:red;
+    font-family:Dubai;
+    font-size:18px;
+}
+
+.itemDel dd {
+    font-weight:bold;
+    font-family:Dubai;
+    font-size:16px;
+}
+
+.chk {
+    padding-right: 30px;
+}
+
+.create {
+    margin-top:50px;
+}
+
+.create a{
+    color:white;
+    text-decoration:none;
+}
+
+
+.about h2{
+    padding-top:50px;
+    color:red;
+    font-weight:bold;
+    font-family:Dubai;
+    font-size:38px;
+}
+
+.about p1{
+    font-weight:bold;
+    font-family:Dubai;
+    color:black;
+    font-size:18px;
+}
+
+.about p2 {
+    font-weight: bold;
+    font-family: Dubai;
+    color: black;
+    font-size: 18px;
+    padding-bottom:50px;
+}
+
+#search {
+    float: right;
+    margin-top: 9px;
+    width: 250px;
+}
+
+.search {
+    padding: 5px 0;
+    width: 230px;
+    height: 30px;
+    position: relative;
+    left: 10px;
+    float: left;
+    line-height: 22px;
+}
+
+    .search input {
+        position: absolute;
+        width: 0px;
+        float: Left;
+        margin-left: 210px;
+        -webkit-transition: all 0.7s ease-in-out;
+        -moz-transition: all 0.7s ease-in-out;
+        -o-transition: all 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
+        height: 30px;
+        line-height: 18px;
+        padding: 0 2px 0 2px;
+        border-radius: 1px;
+    }
+
+        .search:hover input, .search input:focus {
+            width: 200px;
+            margin-left:0px;
+        }
+
+.search button {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border-radius: 1px;
+}
+
+.homeContact h2{
+    font-weight:bold;
+    font-family:Dubai;
+    font-size:38px;
+    color:red;
+    margin-top:40px;
+}
+
+.homeContact p {
+    font-weight: bold;
+    font-family: Dubai;
+    color: black;
+    font-size: 18px;
+}
+
+.arwBTN {
+    color:red;
+    text-decoration:none;
+}
+
+.arwBTN:hover {
+    color:white;
+}
+
+
+.cartTotal p{
+    font-weight:bold;
+    color:black;
+    font-size:38px;
+    font-family:Dubai;
+}

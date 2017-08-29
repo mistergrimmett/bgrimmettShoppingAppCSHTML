@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bgrimmettShoppingAppCSHTML.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,7 @@ using System.Web.Mvc;
 
 namespace bgrimmettShoppingAppCSHTML.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Universal
     {
         public ActionResult Index()
         {
@@ -15,7 +16,7 @@ namespace bgrimmettShoppingAppCSHTML.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Our Story";
 
             return View();
         }

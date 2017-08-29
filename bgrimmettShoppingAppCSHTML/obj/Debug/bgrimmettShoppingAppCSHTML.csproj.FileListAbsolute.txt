@@ -94,3 +94,4 @@ C:\Users\Brandon\documents\visual studio 2017\Projects\bgrimmettShoppingAppCSHTM
 C:\Users\Brandon\documents\visual studio 2017\Projects\bgrimmettShoppingAppCSHTML\bgrimmettShoppingAppCSHTML\bin\Microsoft.AI.Web.xml
 C:\Users\Brandon\documents\visual studio 2017\Projects\bgrimmettShoppingAppCSHTML\bgrimmettShoppingAppCSHTML\obj\Debug\bgrimmettShoppingAppCSHTML.dll
 C:\Users\Brandon\documents\visual studio 2017\Projects\bgrimmettShoppingAppCSHTML\bgrimmettShoppingAppCSHTML\obj\Debug\bgrimmettShoppingAppCSHTML.pdb
+C:\Users\Brandon\documents\visual studio 2017\Projects\bgrimmettShoppingAppCSHTML\bgrimmettShoppingAppCSHTML\obj\Debug\bgrimmettShoppingAppCSHTML.csproj.CoreCompileInputs.cache

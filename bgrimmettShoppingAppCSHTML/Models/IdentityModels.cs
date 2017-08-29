@@ -25,11 +25,11 @@ namespace bgrimmettShoppingAppCSHTML.Models
 
         public ApplicationUser()
         {
-            this.Orders = new HashSet<OrderEntryTable>();
+            this.Orders = new HashSet<Order>();
             this.CartItems = new HashSet<CartItem>();
         }
 
-        public virtual ICollection<OrderEntryTable> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<CartItem> CartItems { get; set; }
 
 
@@ -56,7 +56,7 @@ namespace bgrimmettShoppingAppCSHTML.Models
         
         public DbSet<Item> Items { get; set; }
         public DbSet<CartItem> CartItems { get; set; }     // connects to database using the Db syntax
-        public DbSet<OrderEntryTable> Orders { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
 
     }

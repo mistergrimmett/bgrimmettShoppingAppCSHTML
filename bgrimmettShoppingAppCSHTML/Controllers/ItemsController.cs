@@ -8,17 +8,24 @@ using System.Web;
 using System.Web.Mvc;
 using bgrimmettShoppingAppCSHTML.Models;
 using bgrimmettShoppingAppCSHTML.Models.CodeFirst;
+using System.IO;
 
 namespace bgrimmettShoppingAppCSHTML.Controllers
 {
-    public class ItemsController : Controller
+    public class ItemsController : Universal
     {
-        private ApplicationDbContext db = new ApplicationDbContext();  //Connecting to the application database
+
 
         // GET: Items
         public ActionResult Index()
         {
             return View(db.Items.ToList());
+        }
+
+        //Get Items
+        public ActionResult SearchResults(string searchitem)
+        {
+            return View(db.Items.Where(i => i.Name.Contains(searchitem) || i.Description.Contains(searchitem)).ToList());
         }
 
         // GET: Items/Details/5
@@ -44,16 +51,30 @@ namespace bgrimmettShoppingAppCSHTML.Controllers
         }
 
         // POST: Items/Create
+        // makes sure that all fields have valid information in them before adding the new item to the index
+        // if all fields are NOT valid, the item will not be created.
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]   // authorizes only the admin
-        public ActionResult Create([Bind(Include = "Id,CreationDate,UpdatedDate,Name,Price,MediaURL,Description")] Item item)
+        public ActionResult Create([Bind(Include = "Id,CreationDate,UpdatedDate,Name,Price,MediaURL,Description")] Item item, HttpPostedFileBase image)
         {
+            // checking to make sure the file size is greater than zero, and that the extension is one of the listed extensions
+            if (image != null && image.ContentLength > 0)   //Validating the image
+            {
+                var ext = Path.GetExtension(image.FileName).ToLower();
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
+                    ModelState.AddModelError("image", "Invalid Format.");
+            }
             if (ModelState.IsValid)
             {
+                var filePath = "/Upload/";  //adding the file to the database
+                var absPath = Server.MapPath("~" + filePath);
+                item.MediaURL = filePath + image.FileName;   //specifies the path of the file
+                image.SaveAs(Path.Combine(absPath, image.FileName)); //saves the file. necessary for the specified path to have something to point at
+                item.CreationDate = System.DateTime.Now;
                 db.Items.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -85,10 +106,30 @@ namespace bgrimmettShoppingAppCSHTML.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]   // authorizes only the admin
-        public ActionResult Edit([Bind(Include = "Id,CreationDate,UpdatedDate,Name,Price,MediaURL,Description")] Item item)
+        public ActionResult Edit([Bind(Include = "Id,CreationDate,UpdatedDate,Name,Price,MediaURL,Description")] Item item, string mediaUrl, HttpPostedFileBase image)
         {
+            // checking to make sure the file size is greater than zero, and that the extension is one of the listed extensions
+            if (image != null && image.ContentLength > 0)   //Validating the image
+            {
+                var ext = Path.GetExtension(image.FileName).ToLower();
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
+                    ModelState.AddModelError("image", "Invalid Format.");
+            }
             if (ModelState.IsValid)
             {
+                if(image != null)
+                {
+                var filePath = "/Upload/";  //adding the file to the database
+                var absPath = Server.MapPath("~" + filePath);
+                item.MediaURL = filePath + image.FileName;   //specifies the path of the file
+                image.SaveAs(Path.Combine(absPath, image.FileName)); //saves the file. necessary for the specified path to have something to point at
+                
+                }
+                else
+                {
+                    item.MediaURL = mediaUrl;
+                }
+                item.UpdatedDate = System.DateTime.Now;
                 db.Entry(item).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -120,6 +161,8 @@ namespace bgrimmettShoppingAppCSHTML.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Item item = db.Items.Find(id);
+            var absPath = Server.MapPath("~" + item.MediaURL);
+            System.IO.File.Delete(absPath);
             db.Items.Remove(item);
             db.SaveChanges();
             return RedirectToAction("Index");
