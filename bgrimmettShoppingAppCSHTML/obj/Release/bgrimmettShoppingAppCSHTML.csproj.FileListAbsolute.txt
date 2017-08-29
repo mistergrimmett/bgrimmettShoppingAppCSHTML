@@ -94,3 +94,4 @@ C:\Users\Brandon\Documents\Visual Studio 2017\Projects\bgrimmettShoppingAppCSHTM
 C:\Users\Brandon\Documents\Visual Studio 2017\Projects\bgrimmettShoppingAppCSHTML\bgrimmettShoppingAppCSHTML\obj\Release\bgrimmettShoppingAppCSHTML.csproj.CoreCompileInputs.cache
 C:\Users\Brandon\Documents\Visual Studio 2017\Projects\bgrimmettShoppingAppCSHTML\bgrimmettShoppingAppCSHTML\obj\Release\bgrimmettShoppingAppCSHTML.dll
 C:\Users\Brandon\Documents\Visual Studio 2017\Projects\bgrimmettShoppingAppCSHTML\bgrimmettShoppingAppCSHTML\obj\Release\bgrimmettShoppingAppCSHTML.pdb
+C:\Users\Brandon\documents\visual studio 2017\Projects\bgrimmettShoppingAppCSHTML\bgrimmettShoppingAppCSHTML\obj\Release\bgrimmettShoppingAppCSHTML.csprojResolveAssemblyReference.cache

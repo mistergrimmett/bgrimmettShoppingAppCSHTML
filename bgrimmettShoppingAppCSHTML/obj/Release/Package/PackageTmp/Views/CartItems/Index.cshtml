@@ -61,9 +61,18 @@
 
     </table>
 
-    <div class="cartTotal">
+    <div class="text-right cartTotal">
         <p>
             Total: $@ViewBag.CartTotal
+        </p>
+    </div>
+
+    <div class="text-right">
+        <p>
+            @if (ViewBag.CartItems.Count > 0)
+            {
+                <a href="@Url.Action("Create", "Orders")">Proceed to Checkout</a>
+            }
         </p>
     </div>
 

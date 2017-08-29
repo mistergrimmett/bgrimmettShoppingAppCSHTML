@@ -345,3 +345,18 @@ color:black;
     font-size:38px;
     font-family:Dubai;
 }
+
+.orderCon h1{
+    font-weight:bold;
+    color:red;
+    font-family:Dubai;
+    font-size:38px;
+}
+
+.orderCon p{
+    font-weight:bold;
+    color:black;
+    font-family:Dubai;
+    font-size:18px;
+}
+

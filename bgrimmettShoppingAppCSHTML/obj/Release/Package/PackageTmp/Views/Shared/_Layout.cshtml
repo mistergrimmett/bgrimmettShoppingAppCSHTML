@@ -118,7 +118,7 @@
 
                     @if (Request.IsAuthenticated)
                     {
-                        <li><a href="@Url.Action("Index", "CartItems")"><span class="glyphicon glyphicon-shopping-cart"></span>@ViewBag.CartItems.Count</a></li>
+                        <li><a href="@Url.Action("Index", "CartItems")"><span class="glyphicon glyphicon-shopping-cart"></span>@ViewBag.TotalCartItems</a></li>
                     }
 
                 </ul>
@@ -214,12 +214,12 @@
                             <p><i class="fa fa-credit-card"></i> Credit Card</p>
                             <br>
                             <div class="smi">
-                                <a href="https://www.facebook.com/mistergrimmett"><i class="fa fa-facebook-square"></i></a>
-                                <a href="https://www.instagram.com/mistergrimmett/"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/mistergrimmett" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                                <a href="https://www.instagram.com/mistergrimmett/" target="_blank"><i class="fa fa-instagram"></i></a>
                                 <a href="#"><i class="fa fa-snapchat-ghost"></i></a>
                                 <a href="#"><i class="fa fa-pinterest-square"></i></a>
                                 <a href="#"><i class="fa fa-twitter-square"></i></a>
-                                <a href="https://www.linkedin.com/in/brandon-grimmett/"><i class="fa fa-linkedin-square"></i></a>
+                                <a href="https://www.linkedin.com/in/brandon-grimmett/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
 
 
                             </div>
