@@ -1,0 +1,78 @@
+﻿@model bgrimmettShoppingAppCSHTML.Models.CodeFirst.Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="idp">
+    <div class="text-center">
+        <h2>Item Details</h2>
+
+        <h4>@Model.Name</h4>
+
+        <img src="@Model.MediaURL" />
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreationDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdatedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UpdatedDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MediaURL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MediaURL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.Raw(Model.Description)
+            </dd>
+
+        </dl>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+            @using (Html.BeginForm("Create", "CartItems", new { id = Model.Id }, FormMethod.Post))
+            {    //To keep secure
+                @Html.AntiForgeryToken()
+                //input type button
+                <input type="submit" class="btn btn-danger" value="Add to cart" />
+            }
+        </p>
+    </div>
+</div>

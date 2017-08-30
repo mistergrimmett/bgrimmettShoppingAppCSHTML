@@ -62,6 +62,7 @@ color:black;
 .bkg {
     margin-bottom: 20px;
     margin-top: 20px;
+    width:325px;
 }
 
 .sp {
@@ -70,7 +71,6 @@ color:black;
     padding-bottom: 40px;
     padding-left:40px;
     background-color:black;
-    border-radius:10px;
 
 
 }
@@ -83,19 +83,21 @@ color:black;
 
     .sp p{
         color:white;
+        font-weight:bold;
     }
 
 .fp {
     padding-top: 50px;
     padding-bottom: 40px;
     background-color: white;
-    color: black;
+    color: white;
     text-align:center;
 }
 
     .fp a {
         text-decoration: none;
-        color:black;
+        color:white;
+        font-weight:bold;
     }
 
     .fp a:hover {
@@ -107,6 +109,7 @@ color:black;
     margin-top: 10px;
     color: white;
     text-decoration: none;
+    font-weight:bold;
 }
 
     .as a:hover {

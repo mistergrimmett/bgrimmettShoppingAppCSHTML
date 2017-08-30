@@ -150,39 +150,37 @@
 
 
     <!--End Of Image Section-->
-
-    <div class="container sp">
-        <!--<div class="row">
-            <div class="col-md-12">
-                <div class="mySubscribeCustom">
-                    <h1>Subscribe</h1>
-                    <p1>To get special offers and <span style="color:tomato">VIP</span> treatment:</p1>
-                    <div class="form-group bkg">
-                        <form>
-                            <input class="form-control bkg" placeholder="Enter e-mail" />
-                            <button class="btn btn-danger">Subscribe</button>
-                        </form>
-                    </div>
+    <!--<div class="row">
+        <div class="col-md-12">
+            <div class="mySubscribeCustom">
+                <h1>Subscribe</h1>
+                <p1>To get special offers and <span style="color:tomato">VIP</span> treatment:</p1>
+                <div class="form-group bkg">
+                    <form>
+                        <input class="form-control bkg" placeholder="Enter e-mail" />
+                        <button class="btn btn-danger">Subscribe</button>
+                    </form>
                 </div>
             </div>
-        </div>-->
-        <!--Contact, About and Store beginning-->
-        <div>
+        </div>
+    </div>-->
+    <!--Contact, About and Store beginning-->
+    <div class="container sp">
             <div class="text-center">
                 <div class="grid-33">
-                    <div>
-                        <h>Contact</h>
-                        <p>Questions? Ask &darr;</p>
-                        <div class="form-group text-center bkg">
-                            <form>
-                                <input class="form-control bkg" type="text" placeholder="Name" />
-                                <input class="form-control bkg" type="text" placeholder="Email" />
-                                <input class="form-control bkg" type="text" placeholder="Subject" />
-                                <input class="form-control bkg" type="text" placeholder="Message" />
-                                <a href="@Url.Action(" Contact", "Home" )"><span class="glyphicon glyphicon-arrow-right arwBTN"></span></a>
-                            </form>
-                        </div>
-                    </div>
+
+                    <h>Contact</h>
+                    <p>Questions? Ask &darr;</p>
+                    @*<div class=" text-center bkg">*@
+                    <form>
+                        <input class="form-control bkg" type="text" placeholder="Name" />
+                        <input class="form-control bkg" type="text" placeholder="Email" />
+                        <input class="form-control bkg" type="text" placeholder="Subject" />
+                        <input class="form-control bkg" type="text" placeholder="Message" />
+                        <a href="@Url.Action(" Contact", "Home" )"><span class="glyphicon glyphicon-arrow-right arwBTN"></span></a>
+                    </form>
+                    @*</div>*@
+
                 </div>
             </div>
             <div class="as">
@@ -215,12 +213,8 @@
                         <p><i class="fa fa-credit-card"></i> Credit Card</p>
                         <br>
                         <div class="smi">
-                            <a href="https://www.facebook.com/mistergrimmett" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                            <a href="https://www.instagram.com/mistergrimmett/" target="_blank"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-snapchat-ghost"></i></a>
-                            <a href="#"><i class="fa fa-pinterest-square"></i></a>
-                            <a href="#"><i class="fa fa-twitter-square"></i></a>
-                            <a href="https://www.linkedin.com/in/brandon-grimmett/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                            @*<a href="https://www.instagram.com/mistergrimmett/" target="_blank"><i class="fa fa-instagram"></i></a>*@
+                            @*<a href="https://www.linkedin.com/in/brandon-grimmett/" target="_blank"><i class="fa fa-linkedin-square"></i></a>*@
 
 
                         </div>
@@ -228,20 +222,30 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
     <!--Contact, About and Store end-->
     <!--footer starts-->
-    <footer>
-        <center>
-            <div class="fp">
-                Powered By <a href="#">Brandon Grimmett &copy; 2017</a>
-            </div>
 
-        </center>
-    </footer>
+    <div class="container">
+        <div class="text-center center-block">
+            <a href="https://www.facebook.com/mistergrimmett" target="_blank"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+            <a href="https://www.instagram.com/mistergrimmett/" target="_blank"><i id="social-insta" class="fa fa-instagram fa-3x social"></i></a>
+            <a href="https://www.linkedin.com/in/brandon-grimmett/" target="_blank"><i id="social-linked" class="fa fa-linkedin-square fa-3x social"></i></a>
+        </div>
     </div>
+
+
+    @*<div>
+        <footer>
+            <center>
+                <div class="fp">
+                    Powered By <a href="#">Brandon Grimmett &copy; 2017</a>
+                </div>
+
+            </center>
+        </footer>
+    </div>*@
 
 
 

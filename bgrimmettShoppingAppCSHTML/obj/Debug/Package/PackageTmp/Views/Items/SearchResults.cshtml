@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<bgrimmettShoppingAppCSHTML.Models.CodeFirst.Item>
+@{
+    ViewBag.Title = "SearchResults";
+}
+
+
+
+<div style="color:red; padding-top:30px;">@Model.Count() Items</div>
+<br />
+<div class="row" style="padding-top:40px;">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <a href="@Url.Action("Details", "Items", new { id = item.Id })"><img src="@item.MediaURL" class="img-responsive hImage" /></a>
+            <p style="padding-top:25px;">@item.Name</p>
+            <p>$@item.Price</p>
+
+            @using (Html.BeginForm("Create", "CartItems", new { id = item.Id }, FormMethod.Post))
+            {    //To keep secure
+                @Html.AntiForgeryToken()
+                //input type button
+                <input type="submit" class="btn btn-danger" value="Add to cart" />
+            }
+
+            @if (User.IsInRole("Admin"))
+                {
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <span>|</span>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            }
+        </div>
+    }
+</div>
+
+@*<div class="row create">
+        <div class="col-lg-12">
+            @if (User.IsInRole("Admin"))
+            {
+                <button class="btn btn-danger pull-left" style="text-decoration:none; color:white;">@Html.ActionLink("Create New", "Create")</button>
+            }
+        </div>
+    </div>*@
+
