@@ -59,15 +59,15 @@
                     <a class="navbar-brand" href="#">Precious Time</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li><a href="@Url.Action(" Index", "Home" )">Home</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Series
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Index", "Items")">CFW Series</a></li>
-                            <li><a href="@Url.Action("Index", "Items")">CFAW Series</a></li>
+                            <li><a href="@Url.Action(" Index", "Items" )">CFW Series</a></li>
+                            <li><a href="@Url.Action(" Index", "Items" )">CFAW Series</a></li>
                         </ul>
 
                     <li class="dropdown">
@@ -100,10 +100,15 @@
                         <div class="search">
                             @using (Html.BeginForm("SearchResults", "Items", FormMethod.Post))
                             {
-
                                 <input type="text" class="form-control input-sm" maxlength="64" name="searchitem" id="searchitem" placeholder="Search" />
                                 <button type="submit" class="btn btn-danger btn-sm">Search</button>
-
+                            }
+                        </div>
+                        @Html.Partial("_LoginPartial")
+                        <div class="nav navbar-nav navbar-right chk">
+                            @if (Request.IsAuthenticated)
+                            {
+                                <a href="@Url.Action("Index", "CartItems" )"><span class="glyphicon glyphicon-shopping-cart"></span>@ViewBag.TotalCartItems</a>
                             }
                         </div>
                     </div>
@@ -111,17 +116,14 @@
 
 
 
-                <div class="chk">
-                    @Html.Partial("_LoginPartial")
-                </div>
-                <ul class="nav navbar-nav navbar-right">
+                @*<div class="chk">
+                    
+                </div>*@
+                @*<ul class="nav navbar-nav navbar-right">
 
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li><a href="@Url.Action("Index", "CartItems")"><span class="glyphicon glyphicon-shopping-cart"></span>@ViewBag.TotalCartItems</a></li>
-                    }
+                    
 
-                </ul>
+                </ul>*@
             </div>
 
         </div>
@@ -178,7 +180,7 @@
                                 <input class="form-control bkg" type="text" placeholder="Email" />
                                 <input class="form-control bkg" type="text" placeholder="Subject" />
                                 <input class="form-control bkg" type="text" placeholder="Message" />
-                                <a href="@Url.Action("Contact", "Home")"><span class="glyphicon glyphicon-arrow-right arwBTN"></span></a>
+                                <a href="@Url.Action(" Contact", "Home" )"><span class="glyphicon glyphicon-arrow-right arwBTN"></span></a>
                             </form>
                         </div>
                     </div>
@@ -188,7 +190,7 @@
                     <div class="text-center">
                         <div class="col-md-4">
                             <h>About</h>
-                            <p><a href="@Url.Action("About", "Home")">About us</a></p>
+                            <p><a href="@Url.Action(" About", "Home" )">About us</a></p>
                             <p><a href="#">We're Hiring</a></p>
                             <p><a href="#" data-toggle="modal" data-target="#myModal">Contact</a></p>
                             <p><a href="#">Support</a></p>
@@ -302,10 +304,10 @@
                 <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">&times;</button>
                 <div class="headingformenu"
                      style="font-weight:bold;
-                         text-align:center;
-                         padding-bottom:90px;
-                         font-size:28px;
-                         font-family:'Century Gothic';">LOGO</div>
+                                                         text-align:center;
+                                                         padding-bottom:90px;
+                                                         font-size:28px;
+                                                         font-family:'Century Gothic';">LOGO</div>
                 <div class="myCustomNavItem">
                     <div class="myCustomNavItem">
 
@@ -360,17 +362,17 @@
                 <!--END OF MAIN IMAGE-->
             </div>
             <script>
-                    function w3_open() {
-                        document.getElementById("main").style.marginLeft = "none";
-                        document.getElementById("mySidebar").style.width = "25%";
-                        document.getElementById("mySidebar").style.display = "block";
-                        document.getElementById("openNav").style.display = 'block';
-                    }
-                    function w3_close() {
-                        document.getElementById("main").style.marginLeft = "none";
-                        document.getElementById("mySidebar").style.display = "none";
-                        document.getElementById("openNav").style.display = "inline-block";
-                    }
+                                                    function w3_open() {
+                                                        document.getElementById("main").style.marginLeft = "none";
+                                                        document.getElementById("mySidebar").style.width = "25%";
+                                                        document.getElementById("mySidebar").style.display = "block";
+                                                        document.getElementById("openNav").style.display = 'block';
+                                                    }
+                                                    function w3_close() {
+                                                        document.getElementById("main").style.marginLeft = "none";
+                                                        document.getElementById("mySidebar").style.display = "none";
+                                                        document.getElementById("openNav").style.display = "inline-block";
+                                                    }
             </script>
             <!--style.display resets an elements display property to the default by blanking out the inline "display: none",
                causing the element to fall back on its display property as defined by the page's ranking CSS rules.-->

@@ -31,7 +31,7 @@
 .nb {
     background-color:black;
     font-family:Dubai;
-    font-size:20px;
+    font-size:16px;
 }
 
 .home {
@@ -234,7 +234,17 @@ color:black;
 }
 
 .chk {
-    padding-right: 30px;
+    padding-top: 15px;
+}
+
+.chk a{
+    text-decoration:none;
+    color:grey;
+    padding-top:12px;
+}
+
+.chk a:hover{
+    color:white;
 }
 
 .create {
@@ -312,7 +322,8 @@ color:black;
     right: 0;
     top: 5px;
     border-radius: 1px;
-}
+}   
+
 
 .homeContact h2{
     font-weight:bold;
