@@ -3,32 +3,33 @@
 }
 
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="home">
-                <h1>Precious Time</h1>
-                <p>is a brand that values your business. </p>
-                <p>We take our brand, intertwine it with your style, and deliver a product you will cherish forever.</p>
-                <p>Precious Time also offers:</p>
-                <p>&#8226; Repairs</p>
-                <p>&#8226; Parts</p>
-                <p>&#8226; Straps</p>
-                <p>&#8226; Accessories</p>
-                <br />
-                <p>We guarantee our product 100%!</p>
-                @using (Html.BeginForm("Index", "Items", FormMethod.Post))
-                {    //To keep secure
-                    @Html.AntiForgeryToken()
-                    //input type button
-                    <input type="submit" class="btn btn-danger" value="SHOP NOW" />
-                }
-            </div>
+<div class="row">
+    <div class="grid-50">
+        <div class="home">
+            <h1>Precious Time</h1>
+            <p>is a brand that values your business. </p>
+            <p>We take our brand, intertwine it with your style, and deliver a product you will cherish forever.</p>
+            <p>Precious Time also offers:</p>
+            <p>&#8226; Repairs</p>
+            <p>&#8226; Parts</p>
+            <p>&#8226; Straps</p>
+            <p>&#8226; Accessories</p>
+            <br />
+            <p>We guarantee our product 100%!</p>
+            @using (Html.BeginForm("Index", "Items", FormMethod.Post))
+            {    //To keep secure
+                @Html.AntiForgeryToken()
+                //input type button
+                <input type="submit" class="btn btn-danger" value="SHOP NOW" />
+            }
+        </div>
     </div>
     <div class="hImage">
-        <div class="col-md-6">
+        <div class="grid-50">
             <img src="~/Assets/Images/Original Grain.jpg" />
         </div>
     </div>
-</div>
 
+
+</div>
 
