@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<bgrimmettShoppingAppCSHTML.Models.CodeFirst.Item>
 
-<div class="row create">
-    <div class="col-lg-12">
+<div class="create">
+    <div class="grid-100">
         @if (User.IsInRole("Admin"))
         {
             <button class="btn btn-danger pull-left" style="text-decoration:none; color:white;">@Html.ActionLink("Create New", "Create")</button>
@@ -11,11 +11,11 @@
 
 
 
-<div class="row" style="padding-top:40px;">
+<div style="padding-top:40px;">
     @foreach (var item in Model)
     {
-        <div class="col-md-3">
-            <a href="@Url.Action("Details", "Items", new { id = item.Id })"><img src="@Url.Content(item.MediaURL)" class="img-responsive hImage" /></a>
+        <div class="grid-25 text-center">
+            <a href="@Url.Action("Details", "Items", new { id = item.Id })"><img src="@Url.Content(item.MediaURL)" class="itemImg" /></a>
             <p style="padding-top:25px;">@item.Name</p>
             <p>$@item.Price</p>
 

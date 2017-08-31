@@ -225,8 +225,14 @@
     <Content Include="Assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\Images\6cf38b7fa1d5602d37bcb3ddbfeca437.jpg" />
+    <Content Include="Assets\Images\82d13e184f30a484469656fdd950b310_original.jpg" />
     <Content Include="Assets\Images\Fancy-Wood-Watches-for-Men-01.jpg" />
+    <Content Include="Assets\Images\OG2.jpg" />
+    <Content Include="Assets\Images\OG3.jpg" />
+    <Content Include="Assets\Images\OG4.jpg" />
     <Content Include="Assets\Images\Original Grain.jpg" />
+    <Content Include="Assets\Images\original-grain-watches-2.jpg" />
     <Content Include="Assets\js\myJS.js" />
     <Content Include="Assets\scripts\jquery-1.9.1.min.map" />
     <Content Include="Assets\UnsemanticGrid\javascripts\adapt.min.js" />

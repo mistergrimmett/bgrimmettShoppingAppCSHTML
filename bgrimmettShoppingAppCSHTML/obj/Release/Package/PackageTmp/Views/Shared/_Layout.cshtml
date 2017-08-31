@@ -53,22 +53,22 @@
     <!--End of modal-->
     <!--Beginning Of Navigation-->
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="nb">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Precious Time</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action(" Index", "Home" )">Home</a></li>
+                    <li><a href="@Url.Action("Index", "Home" )">Home</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Series
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="@Url.Action(" Index", "Items" )">CFW Series</a></li>
-                            <li><a href="@Url.Action(" Index", "Items" )">CFAW Series</a></li>
+                            <li><a href="@Url.Action("Index", "Items" )">CFW Series</a></li>
+                            <li><a href="@Url.Action("Index", "Items" )">CFAW Series</a></li>
                         </ul>
 
                     <li class="dropdown">
@@ -150,97 +150,105 @@
 
 
     <!--End Of Image Section-->
-
-    <div class="container sp">
-        <!--<div class="row">
-            <div class="col-md-12">
-                <div class="mySubscribeCustom">
-                    <h1>Subscribe</h1>
-                    <p1>To get special offers and <span style="color:tomato">VIP</span> treatment:</p1>
-                    <div class="form-group bkg">
-                        <form>
-                            <input class="form-control bkg" placeholder="Enter e-mail" />
-                            <button class="btn btn-danger">Subscribe</button>
-                        </form>
-                    </div>
+    <!--<div class="row">
+        <div class="col-md-12">
+            <div class="mySubscribeCustom">
+                <h1>Subscribe</h1>
+                <p1>To get special offers and <span style="color:tomato">VIP</span> treatment:</p1>
+                <div class="form-group bkg">
+                    <form>
+                        <input class="form-control bkg" placeholder="Enter e-mail" />
+                        <button class="btn btn-danger">Subscribe</button>
+                    </form>
                 </div>
             </div>
-        </div>-->
-        <!--Contact, About and Store beginning-->
-        <div>
+        </div>
+    </div>-->
+    <!--Contact, About and Store beginning-->
+    <div class="container sp">
+        <div class="text-center">
+            <div class="grid-33">
+
+                <h>Contact</h>
+                <p>Questions? Ask &darr;</p>
+                @*<div class=" text-center bkg">*@
+                <form>
+                    <input class="form-control bkg" type="text" placeholder="Name" />
+                    <input class="form-control bkg" type="text" placeholder="Email" />
+                    <input class="form-control bkg" type="text" placeholder="Subject" />
+                    <input class="form-control bkg" type="text" placeholder="Message" />
+                    <a href="@Url.Action(" Contact", "Home" )"><span class="glyphicon glyphicon-arrow-right arwBTN"></span></a>
+                </form>
+                @*</div>*@
+
+            </div>
+        </div>
+        <div class="as">
             <div class="text-center">
                 <div class="grid-33">
-                    <div>
-                        <h>Contact</h>
-                        <p>Questions? Ask &darr;</p>
-                        <div class="form-group text-center bkg">
-                            <form>
-                                <input class="form-control bkg" type="text" placeholder="Name" />
-                                <input class="form-control bkg" type="text" placeholder="Email" />
-                                <input class="form-control bkg" type="text" placeholder="Subject" />
-                                <input class="form-control bkg" type="text" placeholder="Message" />
-                                <a href="@Url.Action(" Contact", "Home" )"><span class="glyphicon glyphicon-arrow-right arwBTN"></span></a>
-                            </form>
-                        </div>
-                    </div>
+                    <h>About</h>
+                    <p><a href="@Url.Action(" About", "Home" )">About us</a></p>
+                    <p><a href="#">We're Hiring</a></p>
+                    <p><a href="#" data-toggle="modal" data-target="#myModal">Contact</a></p>
+                    <p><a href="#">Support</a></p>
+                    <p><a href="#">Find Store</a></p>
+                    <p><a href="#">Shipment</a></p>
+                    <p><a href="#">Payment</a></p>
+                    <p><a href="#">Gift Card</a></p>
+                    <p><a href="#">Return</a></p>
+                    <p><a href="#">Help</a></p>
                 </div>
             </div>
-            <div class="as">
-                <div class="text-center">
-                    <div class="grid-33">
-                        <h>About</h>
-                        <p><a href="@Url.Action(" About", "Home" )">About us</a></p>
-                        <p><a href="#">We're Hiring</a></p>
-                        <p><a href="#" data-toggle="modal" data-target="#myModal">Contact</a></p>
-                        <p><a href="#">Support</a></p>
-                        <p><a href="#">Find Store</a></p>
-                        <p><a href="#">Shipment</a></p>
-                        <p><a href="#">Payment</a></p>
-                        <p><a href="#">Gift Card</a></p>
-                        <p><a href="#">Return</a></p>
-                        <p><a href="#">Help</a></p>
+        </div>
+
+        <div class="store">
+            <div class="text-center">
+                <div class="grid-33">
+                    <h>Store</h>
+                    <p><i class="fa fa-map-marker"></i> Precious Time</p>
+                    <p><i class="fa fa-phone"></i> 867-5309</p>
+                    <p><i class="fa fa-envelope"></i> watch.doctor@precioustime.com</p>
+                    <h>We Accept</h>
+                    <p><i class="fa fa-cc-amex"></i> Amex</p>
+                    <p><i class="fa fa-credit-card"></i> Credit Card</p>
+                    <br>
+
+                    <div class="text-center center-block">
+                        <a href="https://www.facebook.com/mistergrimmett" target="_blank"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                        <a href="https://www.instagram.com/mistergrimmett/" target="_blank"><i id="social-insta" class="fa fa-instagram fa-3x social"></i></a>
+                        <a href="https://www.linkedin.com/in/brandon-grimmett/" target="_blank"><i id="social-linked" class="fa fa-linkedin-square fa-3x social"></i></a>
                     </div>
-                </div>
-            </div>
-
-            <div class="store">
-                <div class="text-center">
-                    <div class="grid-33">
-                        <h>Store</h>
-                        <p><i class="fa fa-map-marker"></i> Precious Time</p>
-                        <p><i class="fa fa-phone"></i> 867-5309</p>
-                        <p><i class="fa fa-envelope"></i> watch.doctor@precioustime.com</p>
-                        <h>We Accept</h>
-                        <p><i class="fa fa-cc-amex"></i> Amex</p>
-                        <p><i class="fa fa-credit-card"></i> Credit Card</p>
-                        <br>
-                        <div class="smi">
-                            <a href="https://www.facebook.com/mistergrimmett" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                            <a href="https://www.instagram.com/mistergrimmett/" target="_blank"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-snapchat-ghost"></i></a>
-                            <a href="#"><i class="fa fa-pinterest-square"></i></a>
-                            <a href="#"><i class="fa fa-twitter-square"></i></a>
-                            <a href="https://www.linkedin.com/in/brandon-grimmett/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
 
 
-                        </div>
-                    </div>
+
+
+                    @*<div class="smi">
+                        @*<a href="https://www.instagram.com/mistergrimmett/" target="_blank"><i class="fa fa-instagram"></i></a>*@
+                    @*<a href="https://www.linkedin.com/in/brandon-grimmett/" target="_blank"><i class="fa fa-linkedin-square"></i></a>*@
+
+
                 </div>
             </div>
         </div>
     </div>
 
 
+
     <!--Contact, About and Store end-->
     <!--footer starts-->
-    <footer>
-        <center>
-            <div class="fp">
-                Powered By <a href="#">Brandon Grimmett &copy; 2017</a>
-            </div>
 
-        </center>
-    </footer>
+
+
+
+    <div>
+        <footer>
+            <center>
+                <div class="fp">
+                    Powered By <a href="#">Brandon Grimmett &copy; 2017</a>
+                </div>
+
+            </center>
+        </footer>
     </div>
 
 
@@ -255,6 +263,7 @@
     @RenderSection("scripts", required: false)
 
 </body>
+
 </html>
 
 

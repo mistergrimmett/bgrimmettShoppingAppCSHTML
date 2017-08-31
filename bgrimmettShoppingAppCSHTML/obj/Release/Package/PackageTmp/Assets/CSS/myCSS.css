@@ -42,27 +42,29 @@
     padding-top:90px;
 }
 
-.home p {
-    font-weight:bold;
-    font-size:20px;
-}
-
-.hImage {
-    padding-top:20px;
-}
-
-
 .home h1 {
 color:black;
     font-weight:bold;
     font-size:38px;
     font-family:Dubai;
 }
+.home p {
+    font-weight:bold;
+    font-size:20px;
+}
+
+.hImage {
+    padding-top: 160px;
+}
+
+.itemImg {
+    padding-top:20px;
+}
 
 .bkg {
     margin-bottom: 20px;
     margin-top: 20px;
-    width:325px;
+    text-align:center;
 }
 
 .sp {
@@ -70,6 +72,7 @@ color:black;
     padding-top: 50px;
     padding-bottom: 40px;
     padding-left:40px;
+    padding-right:40px;
     background-color:black;
 
 
@@ -90,13 +93,13 @@ color:black;
     padding-top: 50px;
     padding-bottom: 40px;
     background-color: white;
-    color: white;
+    color: black;
     text-align:center;
 }
 
     .fp a {
         text-decoration: none;
-        color:white;
+        color:black;
         font-weight:bold;
     }
 
@@ -373,4 +376,40 @@ color:black;
     font-family:Dubai;
     font-size:18px;
 }
+
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.social {
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+/*
+    Multicoloured Hover Variations
+*/
+
+#social-fb:hover {
+    color: #3B5998;
+}
+
+#social-insta:hover {
+    color: #bc2a8d;
+}
+
+#social-linked:hover {
+    color: #007bb6;
+}
+
+/*#social-em:hover {
+    color: #f39c12;
+}*/
 

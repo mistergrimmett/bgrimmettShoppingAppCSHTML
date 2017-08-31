@@ -3,7 +3,7 @@
 }
 
 
-<div class="row">
+<div class="text-center">
     <div class="grid-50">
         <div class="home">
             <h1>Precious Time</h1>
@@ -16,20 +16,24 @@
             <p>&#8226; Accessories</p>
             <br />
             <p>We guarantee our product 100%!</p>
-            @using (Html.BeginForm("Index", "Items", FormMethod.Post))
-            {    //To keep secure
-                @Html.AntiForgeryToken()
-                //input type button
-                <input type="submit" class="btn btn-danger" value="SHOP NOW" />
-            }
+           @using (Html.BeginForm("Index", "Items", FormMethod.Post))
+           {    //To keep secure
+            @Html.AntiForgeryToken()
+               //input type button
+            <input type="submit" class="btn btn-danger" value="SHOP NOW" />
+           }
         </div>
     </div>
-    <div class="text-center hImage">
-        <div class="grid-50">
-            <img src="~/Assets/Images/Original Grain.jpg" class="img-responsive" />
-        </div>
-    </div>
-
-
 </div>
+
+<div class="text-center">
+    <div class="grid-50">
+        <div class="hImage">
+            <img src="~/Assets/Images/82d13e184f30a484469656fdd950b310_original.jpg" class="img-responsive" />
+        </div>
+    </div>
+</div>
+
+
+
 
