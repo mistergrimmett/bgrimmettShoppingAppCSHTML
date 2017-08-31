@@ -54,11 +54,17 @@ color:black;
 }
 
 .hImage {
-    padding-top: 160px;
+    margin-top: 160px;
+    border: 6px double black;
+}
+
+.headerImg {
+    border:6px double black;
 }
 
 .itemImg {
-    padding-top:20px;
+    margin-top:20px;
+    border:6px double black;
 }
 
 .bkg {

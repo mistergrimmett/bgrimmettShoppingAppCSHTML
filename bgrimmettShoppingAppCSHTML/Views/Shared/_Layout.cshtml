@@ -105,7 +105,9 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Search</button>
                             }
                         </div>
-                        @Html.Partial("_LoginPartial")
+                        <div class="nav navbar-nav navbar-right">
+                            @Html.Partial("_LoginPartial")
+                        </div>
                         <div class="nav navbar-nav navbar-right chk">
                             @if (Request.IsAuthenticated)
                             {
@@ -136,7 +138,9 @@
 
     <div class="container">
         <div class="grid-100">
-            <img src="~/Assets/Images/3.jpg" class="img-responsive" />
+            <div class="headerImg">
+                <img src="~/Assets/Images/3.jpg" class="img-responsive" />
+            </div>
         </div>
     </div>
 
